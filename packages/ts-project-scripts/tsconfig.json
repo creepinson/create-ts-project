@@ -1,12 +1,12 @@
 {
-  "references": [
-    {
-      "path": "../ts-project-cli-utils/tsconfig.build.json"
-    }
-  ],
-  "extends": "./tsconfig.build.json",
-  "compilerOptions": {
-    "types": ["node", "jest"]
-  },
-  "exclude": []
+    "references": [
+        {
+            "path": "../ts-project-cli-utils/tsconfig.build.json"
+        }
+    ],
+    "extends": "./tsconfig.build.json",
+    "compilerOptions": {
+        "types": ["node", "jest"]
+    },
+    "exclude": []
 }

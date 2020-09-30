@@ -1,77 +1,77 @@
 {
-  "name": "@jtbennett/ts-project-scripts",
-  "version": "1.0.0-rc.4",
-  "keywords": [
-    "typescript",
-    "monorepo",
-    "generator",
-    "create",
-    "project"
-  ],
-  "description": "Scripts for Create TypeScript Project.",
-  "author": "John Bennett <john@jtbennett.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jtbennett/create-ts-project.git",
-    "directory": "packages/ts-project-scripts"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/jtbennett/create-ts-project/issues"
-  },
-  "main": "lib/index.ts",
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib/**/*",
-    "templates/**/*"
-  ],
-  "bin": {
-    "tsp": "./lib/index.js"
-  },
-  "scripts": {
-    "dev": "yarn build && node ./lib/index.js",
-    "lint": "eslint ./src --ext .ts --env node",
-    "test": "jest --passWithNoTests --rootDir ./",
-    "clean": "rimraf ./lib ./tsconfig.tsBuildInfo",
-    "build": "tsc --build ./tsconfig.build.json && chmod +x ./lib/index.js",
-    "verify": "yarn test && yarn clean && yarn build && yarn lint --max-warnings 0",
-    "purge": "yarn clean && rimraf ./coverage ./node_modules",
-    "tsp": "yarn run tsp:dev \"$@\" --cwd $(pwd)"
-  },
-  "dependencies": {
-    "@jtbennett/ts-project-cli-utils": "workspace:*",
-    "async": "^3.2.0",
-    "chalk": "^4.1.0",
-    "fs-extra": "^9.0.1",
-    "npm-packlist": "^2.1.2",
-    "resolve": "1.17.0",
-    "semver": "7.3.2",
-    "yargs": "^16.0.3"
-  },
-  "devDependencies": {
-    "@types/async": "^3.2.3",
-    "@types/fs-extra": "^9.0.1",
-    "@types/npm-packlist": "1.1.1",
-    "@types/resolve": "1.17.1",
-    "@types/semver": "7.3.4",
-    "@types/yargs": "^15.0.6",
-    "eslint": "^7.9.0",
-    "jest": "26.4.2",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^26.4.0",
-    "typescript": "~4.0.3"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "testMatch": [
-      "<rootDir>/src/**/*.test.ts"
+    "name": "@throw-out-error/ts-project-scripts",
+    "version": "1.0.0-rc.4",
+    "keywords": [
+        "typescript",
+        "monorepo",
+        "generator",
+        "create",
+        "project"
     ],
-    "moduleNameMapper": {
-      "@jtbennett/ts-project-cli-utils": "<rootDir>/../ts-project-cli-utils/src"
+    "description": "Scripts for Create TypeScript Project.",
+    "author": "Theo Paris <theoparisdesigns@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/throw-out-error/create-ts-project.git",
+        "directory": "packages/ts-project-scripts"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "bugs": {
+        "url": "https://github.com/throw-out-error/create-ts-project/issues"
+    },
+    "main": "lib/index.ts",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*",
+        "templates/**/*"
+    ],
+    "bin": {
+        "tsp": "./lib/index.js"
+    },
+    "scripts": {
+        "dev": "yarn build && node ./lib/index.js",
+        "lint": "eslint ./src --ext .ts --env node",
+        "test": "jest --passWithNoTests --rootDir ./",
+        "clean": "rimraf ./lib ./tsconfig.tsBuildInfo",
+        "build": "tsc --build ./tsconfig.build.json",
+        "verify": "yarn test && yarn clean && yarn build && yarn lint",
+        "purge": "yarn clean && rimraf ./coverage ./node_modules",
+        "tsp": "yarn run tsp:dev \"$@\" --cwd $(pwd)"
+    },
+    "dependencies": {
+        "@throw-out-error/ts-project-cli-utils": "workspace:*",
+        "async": "^3.2.0",
+        "chalk": "^4.1.0",
+        "fs-extra": "^9.0.1",
+        "npm-packlist": "^2.1.2",
+        "resolve": "1.17.0",
+        "semver": "7.3.2",
+        "yargs": "^16.0.3"
+    },
+    "devDependencies": {
+        "@types/async": "^3.2.3",
+        "@types/fs-extra": "^9.0.1",
+        "@types/npm-packlist": "1.1.1",
+        "@types/resolve": "1.17.1",
+        "@types/semver": "7.3.4",
+        "@types/yargs": "^15.0.7",
+        "eslint": "^7.10.0",
+        "jest": "26.4.2",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^26.4.1",
+        "typescript": "~4.0.3"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "testMatch": [
+            "<rootDir>/src/**/*.test.ts"
+        ],
+        "moduleNameMapper": {
+            "@throw-out-error/ts-project-cli-utils": "<rootDir>/../ts-project-cli-utils/src"
+        }
     }
-  }
 }

@@ -1,19 +1,19 @@
 import { execSync } from "child_process";
 import { Arguments } from "yargs";
 
-import { commandHandler, log } from "@jtbennett/ts-project-cli-utils";
+import { commandHandler, log } from "@throw-out-error/ts-project-cli-utils";
 
 import { TspScriptsOptions } from "./tspScriptsOptions";
 
 export const tspHandler = <TArgs extends TspScriptsOptions>(
-  commandFunc: (args: Arguments<TArgs>) => void | Promise<void>,
+    commandFunc: (args: Arguments<TArgs>) => void | Promise<void>,
 ) => {
-  return commandHandler<TArgs>(async (args) => {
-    await Promise.resolve(commandFunc(args));
+    return commandHandler<TArgs>(async (args) => {
+        await Promise.resolve(commandFunc(args));
 
-    if (args.yarn) {
-      log.success("Running yarn...");
-      execSync("yarnpkg install", { stdio: "inherit" });
-    }
-  });
+        if (args.yarn) {
+            log.success("Running yarn...");
+            execSync("yarnpkg install", { stdio: "inherit" });
+        }
+    });
 };

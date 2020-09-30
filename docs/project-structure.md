@@ -3,8 +3,8 @@
 Running
 
 ```bash
-yarn create @jtbennett/ts-project my-proj
-# or: npx @jtbennett/create-ts-project my-proj
+yarn create @throw-out-error/ts-project my-proj
+# or: npx @throw-out-error/create-ts-project my-proj
 ```
 
 will create the following files in `my-proj`:

@@ -18,11 +18,11 @@ The project uses the `node_modules` linker -- that is, yarn will install modules
 
 Several yarn plug-ins are included:
 
-- `typescript`: When you install a package `foo`, yarn will also install `@types/foo` (if it exists) into `devDependencies`.
+-   `typescript`: When you install a package `foo`, yarn will also install `@types/foo` (if it exists) into `devDependencies`.
 
-- `workspace-tools`: Includes the `workspace` commands used throughout the project.
+-   `workspace-tools`: Includes the `workspace` commands used throughout the project.
 
-- `version`: Includes the `version` command used to set package versions.
+-   `version`: Includes the `version` command used to set package versions.
 
 Yarn and its plugins are installed in the `./.yarn/releases` and `./.yarn/plugins` directories. These are committed to source control, along with `.yarnrc.yml`.
 
@@ -34,9 +34,9 @@ Yarn workspaces are configured in the root `package.json` with:
 
 ```json
 {
-  "workspaces": {
-    "packages": ["packages/*"]
-  }
+    "workspaces": {
+        "packages": ["packages/*"]
+    }
 }
 ```
 
@@ -44,23 +44,23 @@ The wildcard means that each immediate subdirectory of `./packages` is a workspa
 
 Yarn workspaces does the following whenever you run `yarn`:
 
-- "Hoists" packages to the root `./node_modules` whenever possible. That is, the dependencies for all of your packages will be in `./node_modules`. The only dependencies that will be in a `node_modules` directory inside one of your packages is if that package requires a different version than other packages. This can save disk space if you have multiple packages with common dependencies.
+-   "Hoists" packages to the root `./node_modules` whenever possible. That is, the dependencies for all of your packages will be in `./node_modules`. The only dependencies that will be in a `node_modules` directory inside one of your packages is if that package requires a different version than other packages. This can save disk space if you have multiple packages with common dependencies.
 
-- Creates a symlink in the root `./node_modules` for each of your workspaces that points to the the actual directory under `./packages`. That is:
+-   Creates a symlink in the root `./node_modules` for each of your workspaces that points to the the actual directory under `./packages`. That is:
 
-  ```
-  ./node_modules/my-package -> ./packages/my-package
-  ```
+    ```
+    ./node_modules/my-package -> ./packages/my-package
+    ```
 
-  This is the important part of workspaces. It makes your workspaces resolvable at runtime in your dev environment, because of the normal module resolution algorithm.
+    This is the important part of workspaces. It makes your workspaces resolvable at runtime in your dev environment, because of the normal module resolution algorithm.
 
-  Say that pkg-a references pkg-b. At runtime, when you `import foo from 'pkg-b'`, node will look in:
+    Say that pkg-a references pkg-b. At runtime, when you `import foo from 'pkg-b'`, node will look in:
 
-  - `./packages/pkg-a/node_modules/pkg-b` - Not found.
-  - `./packages/node_modules/pkg-b` - Not found.
-  - `./node_modules/pkg-b` - a symlink to `./packages/pkg-b`. - Success!
+    -   `./packages/pkg-a/node_modules/pkg-b` - Not found.
+    -   `./packages/node_modules/pkg-b` - Not found.
+    -   `./node_modules/pkg-b` - a symlink to `./packages/pkg-b`. - Success!
 
-  _Note: TypeScript resolution works differently, using project references and the `paths` option. See [TypeScript config](#typescript) for more info._
+    _Note: TypeScript resolution works differently, using project references and the `paths` option. See [TypeScript config](#typescript) for more info._
 
 See [workspaces](https://classic.yarnpkg.com/en/docs/workspaces) in the `yarn` documentation for more info.
 
@@ -70,9 +70,9 @@ When one workspace in the project depends on another workspace in the project, t
 
 ```json
 {
-  "dependencies": {
-    "my-other-workspace": "workspace:*"
-  }
+    "dependencies": {
+        "my-other-workspace": "workspace:*"
+    }
 }
 ```
 
@@ -110,18 +110,18 @@ The initial config looks like this:
 
 ```json
 {
-  "nodemonConfig": {
-    "exec": "node ./lib/index.js",
-    "ext": "ts,json",
-    "ignore": ["./src/jest", "./src/**/*.test.ts", "./src/**/__mocks__"],
-    "watch": [
-      ".env",
-      "./src",
-      "./tsconfig.json",
-      "../../config/tsconfig.node.json",
-      "../../config/tsconfig.base.json"
-    ]
-  }
+    "nodemonConfig": {
+        "exec": "node ./lib/index.js",
+        "ext": "ts,json",
+        "ignore": ["./src/jest", "./src/**/*.test.ts", "./src/**/__mocks__"],
+        "watch": [
+            ".env",
+            "./src",
+            "./tsconfig.json",
+            "../../config/tsconfig.node.json",
+            "../../config/tsconfig.base.json"
+        ]
+    }
 }
 ```
 
@@ -156,30 +156,30 @@ All that said, you'll find the prettier config in the `prettier` property of the
 
 The `./.vscode/settings.json` file tells VS Code to:
 
-- Use Prettier for code formatting.
-- Format files on save.
-- Use 2 spaces for indenting.
-- Use the version of TypeScript installed to `node_modules/typescript/lib` by the `devDependency` in the root `package.json`. This prevents developers from inadvertently using different versions of TypeScript, as included in different versions of VS Code.
+-   Use Prettier for code formatting.
+-   Format files on save.
+-   Use 2 spaces for indenting.
+-   Use the version of TypeScript installed to `node_modules/typescript/lib` by the `devDependency` in the root `package.json`. This prevents developers from inadvertently using different versions of TypeScript, as included in different versions of VS Code.
 
 The `./.vscode/extensions.json` file tells VS Code to recommend the following extensions when the project is opened:
 
-- ESLint
-- Prettier
+-   ESLint
+-   Prettier
 
 If your team would benefit from common use of other VS Code extensions, you may want to add them to that file. May I suggest:
 
-- Better Comments (aaron-bond.better-comments)
-- Bracket Pair Colorizer 2 (coenraads.bracket-pair-colorizer-2)
-- Code Spell Checker (streetsidesoftware.code-spell-checker)
-- Docker (ms-azuretools.vscode-docker)
-- DotENV (mikestead.dotenv)
-- GitHub Pull Requests and Issues (github.vscode-pull-request-github)
-- GitLens (eamodio.gitlens)
-- JavaScript (ES6) code snippets (xabikos.javascriptsnippets)
-- Jest Test Explorer (kavod-io.vscode-jest-test-adapter)
-  - Requires: Text Explorer UI (hbenl.vscode-test-explorer)
-- Live Share (ms-vsliveshare.vsliveshare)
-- Peacock (johnpapa.vscode-peacock)
+-   Better Comments (aaron-bond.better-comments)
+-   Bracket Pair Colorizer 2 (coenraads.bracket-pair-colorizer-2)
+-   Code Spell Checker (streetsidesoftware.code-spell-checker)
+-   Docker (ms-azuretools.vscode-docker)
+-   DotENV (mikestead.dotenv)
+-   GitHub Pull Requests and Issues (github.vscode-pull-request-github)
+-   GitLens (eamodio.gitlens)
+-   JavaScript (ES6) code snippets (xabikos.javascriptsnippets)
+-   Jest Test Explorer (kavod-io.vscode-jest-test-adapter)
+    -   Requires: Text Explorer UI (hbenl.vscode-test-explorer)
+-   Live Share (ms-vsliveshare.vsliveshare)
+-   Peacock (johnpapa.vscode-peacock)
 
 ## Publishing to npm
 

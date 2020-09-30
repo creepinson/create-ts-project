@@ -2,7 +2,11 @@
 
 import * as yargs from "yargs";
 
-import { CliOptions, log, setVerbose } from "@jtbennett/ts-project-cli-utils";
+import {
+    CliOptions,
+    log,
+    setVerbose,
+} from "@throw-out-error/ts-project-cli-utils";
 
 import { list } from "./commands/list";
 import { create } from "./commands/create";
@@ -13,27 +17,27 @@ import { remove } from "./commands/remove";
 import { bundle } from "./commands/bundle";
 
 (yargs as yargs.Argv<CliOptions>)
-  .version(false)
-  .scriptName("tsp")
-  .usage("Usage: $0 <command> [options] [--help]")
+    .version(false)
+    .scriptName("tsp")
+    .usage("Usage: $0 <command> [options] [--help]")
 
-  .middleware((argv) => {
-    setVerbose(!!argv.verbose);
-    if (argv.verbose) {
-      log.success("Verbose logging enabled.");
-    }
-  })
+    .middleware((argv) => {
+        setVerbose(!!argv.verbose);
+        if (argv.verbose) {
+            log.success("Verbose logging enabled.");
+        }
+    })
 
-  .command(list as any)
-  .command(create as any)
-  .command(rename as any)
-  .command(add as any)
-  .command(remove as any)
-  .command(bundle as any)
+    .command(list as any)
+    .command(create as any)
+    .command(rename as any)
+    .command(add as any)
+    .command(remove as any)
+    .command(bundle as any)
 
-  .demandCommand(1, "You must enter a command.")
-  .help()
-  .epilog(
-    "More information available at:\nhttps://github.com/jtbennett/create-ts-project",
-  )
-  .wrap(Math.min(120, yargs.terminalWidth())).argv;
+    .demandCommand(1, "You must enter a command.")
+    .help()
+    .epilog(
+        "More information available at:\nhttps://github.com/throw-out-error/create-ts-project",
+    )
+    .wrap(Math.min(120, yargs.terminalWidth())).argv;

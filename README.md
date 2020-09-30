@@ -1,4 +1,4 @@
-# Create TypeScript Project ![Build](https://github.com/jtbennett/create-ts-project/workflows/Build/badge.svg?branch=main)
+# Create TypeScript Project ![Build](https://github.com/throw-out-error/create-ts-project/workflows/Build/badge.svg?branch=main)
 
 Create TypeScript Project generates a ready-for-dev monorepo for projects using [TypeScript project references](https://www.typescriptlang.org/docs/handbook/project-references.html), [yarn](https://yarnpkg.com) (v2), [jest](https://jestjs.io/), [eslint](https://eslint.org/) and [prettier](https://prettier.io/).
 
@@ -6,49 +6,49 @@ The generated repo includes scripts to help manage dependencies between packages
 
 **The short version: It's like Create React App for TypeScript monorepos, with (optional) continuous integration, package publishing, and Docker-based deployment also ready-to-use.**
 
-If you have questions or something doesn't "just work", feel free to [submit an issue](https://github.com/jtbennett/create-ts-project/issues/new). You can find me on Twitter [@jtbennett](https://twitter.com/jtbennett).
+If you have questions or something doesn't "just work", feel free to [submit an issue](https://github.com/throw-out-error/create-ts-project/issues/new). You can find me on Twitter [@throw-out-error](https://twitter.com/throw-out-error).
 
 ## Contents
 
 In this file:
 
-- [Quickstart](#quickstart)
+-   [Quickstart](#quickstart)
 
-- [Why?](#why)
+-   [Why?](#why)
 
-- [Walk-through](#walk-through)
+-   [Walk-through](#walk-through)
 
-- [Philosophy](#philosophy)
+-   [Philosophy](#philosophy)
 
-- [Tools included](#tools-included)
+-   [Tools included](#tools-included)
 
-- [Alternatives](#alternatives)
+-   [Alternatives](#alternatives)
 
-- [License](#license)
+-   [License](#license)
 
 Additional documentation:
 
-- [Yarn scripts](./docs/yarn-scripts.md). What each of the included scripts does.
+-   [Yarn scripts](./docs/yarn-scripts.md). What each of the included scripts does.
 
-- [`tsp` commands](./docs/tsp-commands.md). Details on all `tsp` commands.
+-   [`tsp` commands](./docs/tsp-commands.md). Details on all `tsp` commands.
 
-- [Publishing to npm](./docs/publishing-to-npm.md). How to configure the GitHub workflow to publish when you push a new tag to GitHub.
+-   [Publishing to npm](./docs/publishing-to-npm.md). How to configure the GitHub workflow to publish when you push a new tag to GitHub.
 
-- [Configuration](./docs/configuration.md). How the various config files work.
+-   [Configuration](./docs/configuration.md). How the various config files work.
 
-- [Contributing](./CONTRIBUTING.md)
+-   [Contributing](./CONTRIBUTING.md)
 
 ## Quickstart
 
-- Install [node](https://nodejs.org) (version >=12.0).
+-   Install [node](https://nodejs.org) (version >=12.0).
 
-- Install [yarn](https://yarnpkg.com/getting-started/install) globally (version >=1.22).
+-   Install [yarn](https://yarnpkg.com/getting-started/install) globally (version >=1.22).
 
 Open a terminal and run:
 
 ```bash
-yarn create @jtbennett/ts-project my-proj
-# or: npx @jtbennett/create-ts-project my-proj
+yarn create @throw-out-error/ts-project my-proj
+# or: npx @throw-out-error/create-ts-project my-proj
 cd my-proj
 ```
 
@@ -82,9 +82,9 @@ console.log(foo);
 
 More info:
 
-- [Using `tsp`](#using-tsp) - a walk-through with more explanation.
-- [`tsp` commands](./docs/tsp-commands.md) - reference for all `tsp` commands.
-- [Package templates](./docs/package-templates.md) - List of templates that can be used with `tsp create`.
+-   [Using `tsp`](#using-tsp) - a walk-through with more explanation.
+-   [`tsp` commands](./docs/tsp-commands.md) - reference for all `tsp` commands.
+-   [Package templates](./docs/package-templates.md) - List of templates that can be used with `tsp create`.
 
 ### yarn scripts
 
@@ -119,13 +119,13 @@ yarn dev
 
 ### GitHub Action workflows
 
-- **CI build validation.** The repo includes a workflow at `./.github/workflows/build.yml`. It is pre-configured to lint, test and build your packages on each push or PR on the `main` branch.
+-   **CI build validation.** The repo includes a workflow at `./.github/workflows/build.yml`. It is pre-configured to lint, test and build your packages on each push or PR on the `main` branch.
 
-  - **Publish to NPM.** That workflow contains a commented-out step for publishing packages to NPM each time you push a tag like `v1.2.3` to GitHub. See [Publishing to NPM](./docs/publishing-to-npm.md) for instructions to enable publishing.
+    -   **Publish to NPM.** That workflow contains a commented-out step for publishing packages to NPM each time you push a tag like `v1.2.3` to GitHub. See [Publishing to NPM](./docs/publishing-to-npm.md) for instructions to enable publishing.
 
-- **Build Docker image.** The `./docker` directory contains a workflow to build a ready-to-deploy docker image containing a node application on each push or PR to the `main` branch.
+-   **Build Docker image.** The `./docker` directory contains a workflow to build a ready-to-deploy docker image containing a node application on each push or PR to the `main` branch.
 
-  - **Deploy image to Heroku.** That workflow contains a commented-out step showing how to deploy an app to Heroku.
+    -   **Deploy image to Heroku.** That workflow contains a commented-out step showing how to deploy an app to Heroku.
 
 ## Why?
 
@@ -171,15 +171,15 @@ _It is not recommended to install the `create-ts-project` package. Instead, use 
 
 Prerequisites:
 
-- Install [node](https://nodejs.org) (version >=12.0).
+-   Install [node](https://nodejs.org) (version >=12.0).
 
-- Install [yarn](https://yarnpkg.com/getting-started/install) globally (version >=1.22).
+-   Install [yarn](https://yarnpkg.com/getting-started/install) globally (version >=1.22).
 
 To create a new project, open a terminal and run:
 
 ```bash
-yarn create @jtbennett/ts-project my-proj
-# or: npx @jtbennett/create-ts-project my-proj
+yarn create @throw-out-error/ts-project my-proj
+# or: npx @throw-out-error/create-ts-project my-proj
 ```
 
 That will create a directory called `my-proj` inside the current folder. Inside that directory, it will generate the initial project structure and install all the tools and other devDependencies.
@@ -344,11 +344,11 @@ Now you can start adding your actual packages. Enjoy!
 
 ## Philosophy
 
-- **It just works.** All the tools should work well together out of the box, without needing additional configuration.
+-   **It just works.** All the tools should work well together out of the box, without needing additional configuration.
 
-- **No magic.** Everything is done with standard configuration files for typescript, node, eslint, jest, prettier, nodemon, etc. Customize them as you like, or create your own templates.
+-   **No magic.** Everything is done with standard configuration files for typescript, node, eslint, jest, prettier, nodemon, etc. Customize them as you like, or create your own templates.
 
-- **Be practical.** There are a few compromises in this setup. For example, an extra build has to happen before running the node-server template in watch mode, to avoid a race between the compiler and nodemon. Those compromises will be removed if and when the tools make it possible. In the meantime, they're small and probably won't be noticeable.
+-   **Be practical.** There are a few compromises in this setup. For example, an extra build has to happen before running the node-server template in watch mode, to avoid a race between the compiler and nodemon. Those compromises will be removed if and when the tools make it possible. In the meantime, they're small and probably won't be noticeable.
 
 ## Tools included
 
@@ -356,19 +356,19 @@ See [Configuration](./docs/configuration.md) for more info on how each of the to
 
 For development:
 
-- TypeScript - language, uses project references.
-- jest - testing.
-- eslint - linting.
-- yarn v1.x - package management and running scripts.
-- prettier - formatting code.
-- Docker - running dev-time dependencies like databases. _Coming soon!_
-- VS Code - code editor. (Not required, but you may need to configure other editors for linting, formatting, etc.)
+-   TypeScript - language, uses project references.
+-   jest - testing.
+-   eslint - linting.
+-   yarn v1.x - package management and running scripts.
+-   prettier - formatting code.
+-   Docker - running dev-time dependencies like databases. _Coming soon!_
+-   VS Code - code editor. (Not required, but you may need to configure other editors for linting, formatting, etc.)
 
 For continuous integration (CI):
 
-- GitHub Actions - running continuous integration (CI) lint, test and build. Optionally publishing to npm.
-- GitHub packages - hosting docker images.
-- Docker - output of build process for applications is a Docker image.
+-   GitHub Actions - running continuous integration (CI) lint, test and build. Optionally publishing to npm.
+-   GitHub packages - hosting docker images.
+-   Docker - output of build process for applications is a Docker image.
 
 The more of those tools that you use, the more useful CTSP may be, but most can be removed or replaced if you want to go through the effort of configuring an alternative. That said, it probably makes little sense to use this template if you aren't primarily using TypeScript.
 

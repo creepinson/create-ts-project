@@ -1,43 +1,35 @@
 {
-  "name": "@jtbennett/ts-project",
-  "author": "John Bennett",
-  "private": true,
-  "version": "1.0.0-rc.4",
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
-  "scripts": {
-    "lint:all": "yarn workspaces foreach run lint",
-    "test:all": "yarn workspaces foreach run test",
-    "clean:all": "yarn workspaces foreach run clean",
-    "build:all": "yarn workspaces foreach run build",
-    "verify:all": "yarn test:all && yarn clean:all && yarn build:all && yarn lint:all --max-warnings 0",
-    "version:all": "yarn workspaces foreach version $0 && git commit -am \"v$0\" && git tag -a \"v$0\" -m \"v$0\"",
-    "purge:all": "yarn workspaces foreach run purge && rimraf './node_modules'",
-    "ctsp:dev": "yarn workspace @jtbennett/create-ts-project dev --no-yarn",
-    "ctsp:test": "yarn workspace @jtbennett/create-ts-project test",
-    "tsp:dev": "yarn workspace @jtbennett/ts-project-scripts dev --no-yarn",
-    "tsp:test": "yarn workspace @jtbennett/ts-project-scripts test",
-    "utils:test": "yarn workspace @jtbennett/ts-project-cli-utils test"
-  },
-  "devDependencies": {
-    "@types/jest": "26.0.14",
-    "@types/node": "^12.12.62",
-    "@types/rimraf": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/parser": "^4.2.0",
-    "eslint": "^7.9.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-jest": "^24.0.2",
-    "eslint-plugin-node": "^11.1.0",
-    "jest": "26.4.2",
-    "prettier": "^2.1.2",
-    "rimraf": "^3.0.2",
-    "typescript": "~4.0.3"
-  },
-  "prettier": {
-    "trailingComma": "all"
-  }
+    "name": "@throw-out-error/ts-project",
+    "author": "Theo Paris",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+        "lint:all": "pnpm -r run lint",
+        "test:all": "pnpm -r run test",
+        "clean:all": "pnpm -r run clean",
+        "build:all": "pnpm -r run build",
+        "verify:all": "pnpm run test:all && pnpm run clean:all && pnpm run build:all && pnpm run lint:all",
+        "version:all": "pnpm -r version $0 && git commit -am \"v$0\" && git tag -a \"v$0\" -m \"v$0\"",
+        "purge:all": "pnpm -r run purge && rimraf './node_modules'",
+        "ctsp:dev": "pnpm run -r --filter @throw-out-error/create-ts-project dev --no-pnpm run",
+        "ctsp:test": "pnpm run -r --filter @throw-out-error/create-ts-project test",
+        "tsp:dev": "pnpm run -r --filter @throw-out-error/ts-project-scripts dev --no-pnpm run",
+        "tsp:test": "pnpm run -r --filter @throw-out-error/ts-project-scripts test",
+        "utils:test": "pnpm run -r --filter @throw-out-error/ts-project-cli-utils test"
+    },
+    "devDependencies": {
+        "@types/jest": "26.0.14",
+        "@types/node": "^14.11.2",
+        "@types/rimraf": "^3.0.0",
+        "@typescript-eslint/eslint-plugin": "^4.3.0",
+        "@typescript-eslint/parser": "^4.3.0",
+        "eslint": "^7.10.00",
+        "eslint-config-prettier": "^6.12.0",
+        "eslint-plugin-jest": "^24.0.2",
+        "eslint-plugin-node": "^11.1.0",
+        "jest": "26.4.2",
+        "prettier": "^2.1.2",
+        "rimraf": "^3.0.2",
+        "typescript": "~4.0.3"
+    }
 }

@@ -2,7 +2,7 @@
 
 Read the [code of conduct](./CODE_OF_CONDUCT.md).
 
-Before beginning work, please [create an issue](https://github.com/jtbennett/create-ts-project/issues/new) or comment on an existing issue that you would like to work on it.
+Before beginning work, please [create an issue](https://github.com/throw-out-error/create-ts-project/issues/new) or comment on an existing issue that you would like to work on it.
 
 Before creating a pull request, make sure this completes successfully:
 

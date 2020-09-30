@@ -1,3 +1,3 @@
 export interface Tsconfig {
-  references: { path: string }[];
+    references: { path: string }[];
 }

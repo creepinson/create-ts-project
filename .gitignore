@@ -1,8 +1,3 @@
-# If using yarn 2.x, remove these three lines to commit your dependencies to git.
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-
 _tmp
 build
 dist
@@ -19,7 +14,5 @@ my-*
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log
 report.*.json

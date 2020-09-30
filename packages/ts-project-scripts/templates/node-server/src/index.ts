@@ -11,7 +11,7 @@ const message = `${basename(dirname(__dirname)).toUpperCase()}: Hello world`;
 app.get("/", (req, res) => res.send(message));
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-  console.log("Started at", new Date());
-  console.log(`\n${message}`);
+    console.log(`Example app listening at http://localhost:${port}`);
+    console.log("Started at", new Date());
+    console.log(`\n${message}`);
 });
